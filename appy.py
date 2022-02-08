@@ -9,15 +9,15 @@ w = curses.newwin(sh, sw, 0, 0)
 w.keypad(1)
 w.timeout(100)
 
-snk_x = sw/4
-snk_y = sh/2
+snk_x = int(sw/4)
+snk_y = int(sh/2)
 snake = [
         [snk_y, snk_x],
-        [snk_y, snk_x-1],
-        [snk_y, snk_x-2]
+        [snk_y, int(snk_x-1)],
+        [snk_y, int(snk_x-2)]
 ]
 
-food = [sh/2, sw/2]
+food = [int(sh/2), int(sw/2)]
 w.addch(food[0], food[1], curses.ACS_PI)
 
 key = curses.KEY_RIGHT
